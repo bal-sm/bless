@@ -1,2 +1,2 @@
 # bless
-Qur'an for Desktop
+Qur'an for Desktop (WORK IN PROGRESS)
