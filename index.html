@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Bless</title>
+    </head>
+    <body>
+        <div id="app">
+            {{ greeting }}
+            <input v-model="greeting" />
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let app = Vue.createApp(
+                {
+                    data: function() {
+                        return {
+                            greeting: 'Hello Qur\'an'
+                        }
+                    }
+                }
+            )
+        </script>
+    </body>
+</html>
