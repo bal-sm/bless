@@ -1,5 +1,4 @@
 # Bal Git Ignore
-*.dist
 
 # Visual Studio Code
 .vscode/*
