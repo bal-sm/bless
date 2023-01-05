@@ -12,7 +12,7 @@
     <body>
         <div id="app">
             {{ greeting }}
-            <input v-model="greeting" />
+            <input @keyup.enter="greet" v-model="greeting" />
 
         <hr />
 
@@ -32,6 +32,9 @@
                     methods: {
                         toggleBox: function() {
                             this.isVisible = !this.isVisible
+                        },
+                        greet: function() {
+                            console.log(this.greeting)
                         }
                     }
                 }
