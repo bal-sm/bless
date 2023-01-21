@@ -18,7 +18,7 @@
         <hr />
 
             <button @click="toggleBox">Toggle Box</button>
-            <div v-if="isVisible" class="box"></div>
+            <test-box v-if="isVisible"></div>
         </div>
         <script src="https://unpkg.com/vue@next"></script>
         <script>
@@ -40,7 +40,22 @@
                     }
                 }
             )
+            app.component('test-box', {
+                template: `
+                    <div class="box"></div>
+                `,
+                created() {
+                    console.log('test-box created')
+                },
+                mounted() {
+                    console.log('test-box mounted')
+                },
+                unmounted() {
+                    console.log('test-box unmounted')
+                }
+            })
             app.mount('#app')
         </script>
+        
     </body>
 </html>
