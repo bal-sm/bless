@@ -1,10 +1,16 @@
-from PySide6.QtWidgets import QApplication, QWidget
+from PySide6 import QtWidgets
 
 import sys
 
-app = QApplication(sys.argv)
+app = QtWidgets.QApplication(sys.argv)
 
-window = QWidget()
+window = QtWidgets.QMainWindow()
+window.setWindowTitle("Bless")
+
+button = QtWidgets.QPushButton()
+button.setText("Mulai")
+
+window.setCentralWidget(button)
+
 window.show()
-
 app.exec()
