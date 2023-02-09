@@ -9,6 +9,9 @@
 .history
 *.code-workspace
 
+# Qt Creator
+*.pyproject.user
+
 # Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
