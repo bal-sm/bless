@@ -5,6 +5,5 @@ class BlessWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Bless")
-        button = QtWidgets.QPushButton("Mulai")
-
-        self.setCentralWidget(button)
+        self.button = QtWidgets.QPushButton("Mulai", self)
+        self.setCentralWidget(self.button)
