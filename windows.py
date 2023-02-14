@@ -11,6 +11,9 @@ class BismillahWindow(QtWidgets.QMainWindow):
         self.table = QtWidgets.QTableWidget()
         self.table.setWindowTitle("Read it")
 
+        # Bismillaahirrahmaanirrahiim, table item
+        self.bismillah_item = QtWidgets.QTableWidgetItem(bismillah.the_sentence)
+
 
 class BlessWindow(QtWidgets.QMainWindow):
     def __init__(self):
