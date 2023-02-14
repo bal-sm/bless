@@ -29,6 +29,10 @@ class BismillahWindow(QtWidgets.QMainWindow):
         self.table.setItem(0, 0, self.bismillah_item)
         self.table.resizeColumnsToContents()
 
+        # Set maximum width and height
+        self.table.setMaximumWidth(self.header.length())
+        self.table.setMaximumHeight(self.sider.length())
+
 
 class BlessWindow(QtWidgets.QMainWindow):
     def __init__(self):
