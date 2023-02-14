@@ -23,6 +23,12 @@ class BismillahWindow(QtWidgets.QMainWindow):
         self.header.hide()
         self.sider.hide()
 
+        # Set row, column, and item
+        self.table.setRowCount(1)
+        self.table.setColumnCount(1)
+        self.table.setItem(0, 0, self.bismillah_item)
+        self.table.resizeColumnsToContents()
+
 
 class BlessWindow(QtWidgets.QMainWindow):
     def __init__(self):
