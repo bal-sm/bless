@@ -19,6 +19,10 @@ class BismillahWindow(QtWidgets.QMainWindow):
         self.header = self.table.horizontalHeader()
         self.sider = self.table.verticalHeader()
 
+        # Hide them
+        self.header.hide()
+        self.sider.hide()
+
 
 class BlessWindow(QtWidgets.QMainWindow):
     def __init__(self):
