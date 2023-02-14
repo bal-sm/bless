@@ -14,6 +14,11 @@ class BismillahWindow(QtWidgets.QMainWindow):
         # Bismillaahirrahmaanirrahiim, table item
         self.bismillah_item = QtWidgets.QTableWidgetItem(bismillah.the_sentence)
 
+        # Table configuration
+        # Header and sider
+        self.header = self.table.horizontalHeader()
+        self.sider = self.table.verticalHeader()
+
 
 class BlessWindow(QtWidgets.QMainWindow):
     def __init__(self):
