@@ -33,6 +33,18 @@ pycodestyle = ">=2.8.0"
 toml = "*"
 
 [[package]]
+name = "bismillah-on-py"
+version = "1.0.1"
+description = "as `the_sentence`, and `print_them` function."
+category = "main"
+optional = false
+python-versions = ">=3.7,<4.0"
+files = [
+    {file = "bismillah_on_py-1.0.1-py3-none-any.whl", hash = "sha256:c73c98b48b99f5b74734ce140f0be999780f7320df260c2be0c5b98bf4b4a5b0"},
+    {file = "bismillah_on_py-1.0.1.tar.gz", hash = "sha256:e8e88e2fecd19573b068e601494b628a42f1ff92ee3f081608c2359367c22dfe"},
+]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -719,4 +731,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "80de6c4efa7feba820d1d5680e113343614cf322267fc576e1aa292d8499cdc8"
+content-hash = "405309db330adb0194e50bc390972c23df185a486d3441b61e044d9e86767315"
