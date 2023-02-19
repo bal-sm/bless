@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets
 
-from dquran.windows import BlessWindow
+from duser.windows import BlessWindow
 
 import sys
 

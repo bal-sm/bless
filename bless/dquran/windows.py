@@ -32,17 +32,3 @@ class BismillahWindow(QtWidgets.QMainWindow):
         # Set maximum width and height
         self.table.setMaximumWidth(self.header.length())
         self.table.setMaximumHeight(self.sider.length())
-
-
-class BlessWindow(QtWidgets.QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Bless")
-        self.button = QtWidgets.QPushButton("Mulai", self)
-        self.button.clicked.connect(self.bismillah_window)
-        self.setCentralWidget(self.button)
-
-    def bismillah_window(self):
-        self.w = BismillahWindow()
-        self.w.table.show()
-        self.hide()
