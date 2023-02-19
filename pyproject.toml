@@ -5,6 +5,7 @@ description = "Qur'an for Desktop"
 authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه"]
 license = "GPL-3.0-only"
 readme = "README.md"
+packages = [{include = "bless"}]
 
 [tool.poetry.dependencies]
 python = "~3.11"
@@ -14,6 +15,9 @@ pyside6 = "^6.4.2"
 
 [tool.poetry.group.dev.dependencies]
 python-lsp-server = {extras = ["all"], version = "^1.7.1"}
+
+[tool.poetry.scripts]
+bless = "bless.main"
 
 [build-system]
 requires = ["poetry-core"]
