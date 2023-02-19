@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets
 
-import bismillah
+from bismillah_on_py import bismillah
 
 
 class BismillahWindow(QtWidgets.QMainWindow):
