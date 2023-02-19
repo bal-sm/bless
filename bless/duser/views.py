@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets
 
-from dquran.windows import BismillahWindow
+from dquran.views import BismillahWindow
 
 
 class BlessWindow(QtWidgets.QMainWindow):
