@@ -16,9 +16,6 @@ pyside6 = "^6.4.2"
 [tool.poetry.group.dev.dependencies]
 python-lsp-server = {extras = ["all"], version = "^1.7.1"}
 
-[tool.poetry.scripts]
-bless = "bless.main"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
