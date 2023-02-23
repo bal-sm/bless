@@ -5,7 +5,7 @@ description = "Qur'an for Desktop"
 authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه"]
 license = "GPL-3.0-only"
 readme = "README.md"
-packages = [{include = "bless"}]
+packages = [{include = "bless_qt"}]
 
 [tool.poetry.dependencies]
 python = "~3.11"
