@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets
 
-from duser.views import BlessWindow
+from bless_qt.duser.views import BlessWindow
 
 import sys
 
