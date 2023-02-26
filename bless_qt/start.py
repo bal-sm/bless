@@ -4,8 +4,10 @@ from bless_qt.duser.views import BlessWindow
 
 import sys
 
-app = QtWidgets.QApplication(sys.argv)
 
-window = BlessWindow()
-window.show()
-app.exec()
+def main():
+    app = QtWidgets.QApplication(sys.argv)
+
+    window = BlessWindow()
+    window.show()
+    app.exec()
