@@ -6,4 +6,4 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bless_server.settings")
 
 django.setup()
 
-from bless_qt import main
+from bless_qt import start
