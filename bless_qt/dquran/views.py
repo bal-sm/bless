@@ -2,7 +2,7 @@ from PySide6 import QtWidgets
 
 from bismillah_on_py import bismillah
 
-from dquran.models import Quran
+from dquran.models import Ayatship
 
 
 class BismillahWindow(QtWidgets.QMainWindow):
@@ -44,10 +44,10 @@ class AnNasAyat1Window(QtWidgets.QMainWindow):
         self.table = QtWidgets.QTableWidget()
         self.table.setWindowTitle("Read it")
 
-        self.item = Quran.objects.get(surat=114, ayat=1)
+        self.item = Ayatship.objects.get(surat__number=114, number=1)
 
         # Bismillaahirrahmaanirrahiim, table item
-        self.bismillah_item = QtWidgets.QTableWidgetItem(self.item.text)
+        self.bismillah_item = QtWidgets.QTableWidgetItem(self.item.ayat.text)
 
         # Table configuration
         # Header and sider
