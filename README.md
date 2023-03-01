@@ -35,3 +35,13 @@ python3 -m pipx ensurepath
 ```bash
 pipx install git+https://github.com/bal-sm/bless.git
 ```
+
+### Load fixture
+
+[Download An-Nas fixture](https://raw.githubusercontent.com/bal-sm/bless_server/master/dquran/fixtures/dquran.An-Nas.yaml), then _Save Page as..._, and put it on somewhere.
+
+Run this command on the folder which you put the fixture in:
+
+```sh
+bless-server-manage loaddata dquran.An-Nas.yaml
+```
