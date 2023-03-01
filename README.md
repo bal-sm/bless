@@ -13,3 +13,11 @@ This project is still in early stages of development, but here's how to install 
 [Download](https://www.python.org/downloads/)
 
 > Make sure to install the 3.11 version.
+
+### Install pipx (Optional)
+
+Run this command:
+
+```bash
+python3 -m pip install --user pipx
+```
