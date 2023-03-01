@@ -29,3 +29,9 @@ Don't forget to run this command after installing pipx:
 ```bash
 python3 -m pipx ensurepath
 ```
+
+### Install bless
+
+```bash
+pipx install git+https://github.com/bal-sm/bless.git
+```
