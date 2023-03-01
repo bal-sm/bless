@@ -88,7 +88,7 @@ files = [
 
 [[package]]
 name = "bless-server"
-version = "0.6.1"
+version = "0.7.0"
 description = "Server API used for Bless app"
 category = "main"
 optional = false
@@ -111,8 +111,8 @@ xhtml2pdf = "^0.2.9"
 [package.source]
 type = "git"
 url = "https://github.com/bal-sm/bless_server.git"
-reference = "0.6.1"
-resolved_reference = "8727d41a07cd03b47b740daadf60b1a862a81938"
+reference = "0.7.0"
+resolved_reference = "7830c9185ae9b6cd8af08b80909d893be7142b2d"
 
 [[package]]
 name = "certifi"
@@ -1901,4 +1901,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "523d777430d6e70fe8343171dc2538043d132f55123f32cff31ceb1039b4b625"
+content-hash = "ea7b5ead0d998a6ec80628e547473e9be87dfd16ce08edb8802e39735b749de2"

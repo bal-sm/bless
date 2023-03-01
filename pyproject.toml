@@ -14,7 +14,7 @@ packages = [
 python = "~3.11"
 bismillah-on-py = "1.0.1"
 pyside6 = "^6.4.2"
-bless-server = { git = "https://github.com/bal-sm/bless_server.git", tag = "0.6.1" }
+bless-server = { git = "https://github.com/bal-sm/bless_server.git", tag = "0.7.0" }
 
 
 [tool.poetry.group.dev.dependencies]
