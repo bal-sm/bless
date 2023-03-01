@@ -45,3 +45,9 @@ Run this command on the folder which you put the fixture in:
 ```sh
 bless-server-manage loaddata dquran.An-Nas.yaml
 ```
+
+### Start bless
+
+```sh
+bless-start
+```
