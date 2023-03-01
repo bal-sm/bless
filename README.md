@@ -21,3 +21,11 @@ Run this command:
 ```bash
 python3 -m pip install --user pipx
 ```
+
+### Ensure path (after installing pipx)
+
+Don't forget to run this command after installing pipx:
+
+```bash
+python3 -m pipx ensurepath
+```
