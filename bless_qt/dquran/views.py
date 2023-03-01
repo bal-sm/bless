@@ -70,3 +70,6 @@ class QuranWindow(QtWidgets.QMainWindow):
         # Set maximum width and height
         self.table.setMaximumWidth(self.header.length())
         self.table.setMaximumHeight(self.sider.length())
+
+        # Set smooth horizontal scroll
+        self.table.setHorizontalScrollMode(QtWidgets.QAbstractItemView.ScrollPerPixel)
