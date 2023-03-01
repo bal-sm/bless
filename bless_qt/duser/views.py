@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets
 
-from dquran.views import BismillahWindow
+from bless_qt.dquran.views import BismillahWindow, QuranWindow
 
 
 class BlessWindow(QtWidgets.QMainWindow):
@@ -8,10 +8,15 @@ class BlessWindow(QtWidgets.QMainWindow):
         super().__init__()
         self.setWindowTitle("Bless")
         self.button = QtWidgets.QPushButton("Mulai", self)
-        self.button.clicked.connect(self.bismillah_window)
+        self.button.clicked.connect(self.quran_window)
         self.setCentralWidget(self.button)
 
     def bismillah_window(self):
         self.w = BismillahWindow()
+        self.w.table.show()
+        self.hide()
+
+    def quran_window(self):
+        self.w = QuranWindow()
         self.w.table.show()
         self.hide()

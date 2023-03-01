@@ -1,20 +1,27 @@
 [tool.poetry]
 name = "bless"
-version = "0.1.0"
+version = "0.2.0"
 description = "Qur'an for Desktop"
 authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه"]
 license = "GPL-3.0-only"
 readme = "README.md"
-packages = [{include = "bless"}]
+packages = [
+    { include = "bless_qt" },
+    { include = "main.py" },
+]
 
 [tool.poetry.dependencies]
 python = "~3.11"
 bismillah-on-py = "1.0.1"
 pyside6 = "^6.4.2"
+bless-server = { git = "https://github.com/bal-sm/bless_server.git", tag = "0.7.0" }
 
 
 [tool.poetry.group.dev.dependencies]
 python-lsp-server = {extras = ["all"], version = "^1.7.1"}
+
+[tool.poetry.scripts]
+bless-start = "main:main"
 
 [build-system]
 requires = ["poetry-core"]
