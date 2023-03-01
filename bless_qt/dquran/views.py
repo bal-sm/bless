@@ -36,18 +36,13 @@ class BismillahWindow(QtWidgets.QMainWindow):
         self.table.setMaximumHeight(self.sider.length())
 
 
-class AnNasAyat1Window(QtWidgets.QMainWindow):
+class QuranWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
         # Table
         self.table = QtWidgets.QTableWidget()
         self.table.setWindowTitle("Read it")
-
-        self.item = Ayatship.objects.get(surat__number=114, number=1)
-
-        # Bismillaahirrahmaanirrahiim, table item
-        self.bismillah_item = QtWidgets.QTableWidgetItem(self.item.ayat.text)
 
         # Table configuration
         # Header and sider
@@ -58,10 +53,18 @@ class AnNasAyat1Window(QtWidgets.QMainWindow):
         self.header.hide()
         self.sider.hide()
 
+        # Get all Ayatship queries from django
+        self.ayatships = Ayatship.objects.all()
+
         # Set row, column, and item
         self.table.setRowCount(1)
-        self.table.setColumnCount(1)
-        self.table.setItem(0, 0, self.bismillah_item)
+        self.table.setColumnCount(self.ayatships.count())
+
+        # Set item
+        for i, ayatsh in enumerate(self.ayatships):
+            self.ayat_text = QtWidgets.QTableWidgetItem(ayatsh.ayat.text)
+            self.table.setItem(0, i, self.ayat_text)
+
         self.table.resizeColumnsToContents()
 
         # Set maximum width and height
