@@ -1,6 +1,10 @@
 from PySide6 import QtWidgets
+from PySide6.QtGui import QGuiApplication
+from PySide6.QtQml import QQmlApplicationEngine
 
 from bless_qt.dquran.views import BismillahWindow, QuranWindow
+
+import os
 
 
 class BlessWindow(QtWidgets.QMainWindow):
@@ -20,3 +24,7 @@ class BlessWindow(QtWidgets.QMainWindow):
         self.w = QuranWindow()
         self.w.table.show()
         self.hide()
+
+
+def bless_main_qml_path():
+    return os.path.join(os.path.dirname(__file__), "qml/main.qml")
