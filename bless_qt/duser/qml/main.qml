@@ -9,4 +9,9 @@ ApplicationWindow{
     height: 200
     visible: true
     title: qsTr("Bless")
+    
+    Button{
+        id: startButton
+        text: "Start"
+    }
 }
