@@ -13,5 +13,9 @@ def main():
     start.main()
 
 
+def main_qml():
+    start.main_qml()
+
+
 if __name__ == "__main__":
-    main()
+    main_qml()
