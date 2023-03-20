@@ -22,6 +22,7 @@ ApplicationWindow{
     
     Button{
         id: startButton
+        anchors.fill: parent
         text: "Start"
         onClicked: {
             internal.quranWindowSwitch()
