@@ -9,4 +9,13 @@ ApplicationWindow{
     height: 70
     visible: true
     title: qsTr("Qur'an")
+
+        ScrollView {
+        anchors.fill: parent
+
+            Label {
+            text: "ABC"
+            font.pixelSize: 224
+            }    
+    }
 }
