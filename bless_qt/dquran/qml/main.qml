@@ -2,20 +2,25 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
 
-
-ApplicationWindow{
+ApplicationWindow {
     id: window
     width: 540
     height: 70
     visible: true
     title: qsTr("Qur'an")
 
-        ScrollView {
+    ScrollView {
         anchors.fill: parent
 
-            Label {
-            text: "ABC"
-            font.pixelSize: 224
-            }    
+        ListView {
+            id: quransView
+            model: quranmodel
+            delegate: Column {
+                Text {
+                    text: model.ayatinqt
+                    width: 70
+                }
+            }
+        }
     }
 }
