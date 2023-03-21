@@ -15,10 +15,12 @@ ApplicationWindow {
         ListView {
             id: quransView
             model: quranmodel
-            delegate: Column {
+            orientation: Qt.Horizontal
+            layoutDirection: Qt.RightToLeft
+
+            delegate: Row {
                 Text {
                     text: model.ayatinqt
-                    width: 70
                 }
             }
         }
