@@ -1,8 +1,8 @@
-from PySide6 import QtWidgets
+import os
 
 from bismillah_on_py import bismillah
-
 from dquran.models import Ayatship
+from PySide6 import QtWidgets
 
 
 class BismillahWindow(QtWidgets.QMainWindow):
@@ -73,3 +73,7 @@ class QuranWindow(QtWidgets.QMainWindow):
 
         # Set smooth horizontal scroll
         self.table.setHorizontalScrollMode(QtWidgets.QAbstractItemView.ScrollPerPixel)
+
+
+def quran_main_qml_path():
+    return os.path.join(os.path.dirname(__file__), "qml/main.qml")
