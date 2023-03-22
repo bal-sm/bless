@@ -5,6 +5,7 @@ from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 
 from bless_qt.dquran.models import quran_model
+from bless_qt.dquran.views import quran_main_qml_path
 from bless_qt.duser.views import bless_main_qml_path
 from bless_qt.duser.views import BlessWindow
 
@@ -25,5 +26,17 @@ def main_qml():
 
     engine.rootContext().setContextProperty("quranmodel", qurans)
     engine.load(bless_main_qml_path())
+
+    app.exec()
+
+
+def quran_qml():
+    qurans = quran_model()
+
+    app = QGuiApplication(sys.argv)
+    engine = QQmlApplicationEngine()
+
+    engine.rootContext().setContextProperty("quranmodel", qurans)
+    engine.load(quran_main_qml_path())
 
     app.exec()

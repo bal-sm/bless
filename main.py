@@ -1,6 +1,7 @@
+import os
+
 import django
 from django.conf import settings
-import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bless_server.settings")
 
@@ -17,5 +18,9 @@ def main_qml():
     start.main_qml()
 
 
+def quran_qml():
+    start.quran_qml()
+
+
 if __name__ == "__main__":
-    main_qml()
+    quran_qml()
