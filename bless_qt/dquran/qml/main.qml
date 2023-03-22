@@ -18,10 +18,8 @@ ApplicationWindow {
             orientation: Qt.Horizontal
             layoutDirection: Qt.RightToLeft
 
-            delegate: Row {
-                Text {
-                    text: model.ayatinqt
-                }
+            delegate: Text {
+                text: model.ayatinqt
             }
         }
     }
