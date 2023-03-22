@@ -9,6 +9,22 @@ ApplicationWindow {
     visible: true
     title: qsTr("Qur'an")
 
+    Component {
+        id: ayatDelegate
+
+        Rectangle {
+            id: wrapper
+            height: anAyat.contentHeight
+            width: anAyat.contentWidth
+
+            Text {
+                id: anAyat
+                text: model.ayatinqt
+                horizontalAlignment: Text.AlignRight
+            }
+        }
+    }
+
     ScrollView {
         anchors.fill: parent
 
@@ -18,9 +34,7 @@ ApplicationWindow {
             orientation: Qt.Horizontal
             layoutDirection: Qt.RightToLeft
 
-            delegate: Text {
-                text: model.ayatinqt
-            }
+            delegate: ayatDelegate
         }
     }
 }
