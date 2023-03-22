@@ -20,6 +20,7 @@ ApplicationWindow {
             Text {
                 id: anAyat
                 text: model.ayatinqt
+                font.pointSize: 16
                 horizontalAlignment: Text.AlignRight
             }
         }
