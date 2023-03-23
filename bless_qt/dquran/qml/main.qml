@@ -26,16 +26,13 @@ ApplicationWindow {
         }
     }
 
-    ScrollView {
+    ListView {
+        id: quransView
         anchors.fill: parent
+        model: quranmodel
+        orientation: Qt.Horizontal
+        layoutDirection: Qt.RightToLeft
 
-        ListView {
-            id: quransView
-            model: quranmodel
-            orientation: Qt.Horizontal
-            layoutDirection: Qt.RightToLeft
-
-            delegate: ayatDelegate
-        }
+        delegate: ayatDelegate
     }
 }
