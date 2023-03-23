@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 import QtQuick.Window
 
 ApplicationWindow {
@@ -26,13 +27,18 @@ ApplicationWindow {
         }
     }
 
-    ListView {
-        id: quransView
+    ColumnLayout {
+        id: columnLayout
         anchors.fill: parent
-        model: quranmodel
-        orientation: Qt.Horizontal
-        layoutDirection: Qt.RightToLeft
 
-        delegate: ayatDelegate
+        ListView {
+            id: quransView
+            anchors.fill: parent
+            model: quranmodel
+            orientation: Qt.Horizontal
+            layoutDirection: Qt.RightToLeft
+
+            delegate: ayatDelegate
+        }
     }
 }
