@@ -13,7 +13,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "~3.11"
 bismillah-on-py = "1.0.1"
-pyside6 = "^6.4.2"
+pyside6 = "^6.4.3"
 bless-server = { git = "https://github.com/bal-sm/bless_server.git", tag = "0.7.0" }
 
 
