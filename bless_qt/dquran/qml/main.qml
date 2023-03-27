@@ -35,6 +35,11 @@ ApplicationWindow {
         modal: true
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+
+        onClosed: {
+            window.width = 540;
+            window.height = 70;
+        }
     }
 
     ColumnLayout {
