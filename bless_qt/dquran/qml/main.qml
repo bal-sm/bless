@@ -31,6 +31,16 @@ ApplicationWindow {
         id: columnLayout
         anchors.fill: parent
 
+        Row {
+            Layout.alignment: Qt.AlignRight
+            Button {
+                Layout.fillWidth: true
+                text: "Settings"
+                onClicked: {
+                }
+            }
+        }
+
         ListView {
             // bener pake ListView
             id: quransView
