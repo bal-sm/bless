@@ -27,6 +27,16 @@ ApplicationWindow {
         }
     }
 
+    Popup {
+        id: popup
+        anchors.centerIn: parent
+        width: 500
+        height: 200
+        modal: true
+        focus: true
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+    }
+
     ColumnLayout {
         id: columnLayout
         anchors.fill: parent
@@ -37,6 +47,8 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 text: "Settings"
                 onClicked: {
+                    window.height = 300;
+                    popup.open();
                 }
             }
         }
