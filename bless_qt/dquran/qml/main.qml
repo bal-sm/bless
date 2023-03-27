@@ -34,7 +34,9 @@ ApplicationWindow {
         ListView {
             // bener pake ListView
             id: quransView
-            anchors.fill: parent
+            Layout.alignment: Qt.AlignTop
+            Layout.fillHeight: true
+            Layout.fillWidth: true
             model: quranmodel
             orientation: Qt.Horizontal
             layoutDirection: Qt.RightToLeft
