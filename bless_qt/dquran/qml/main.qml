@@ -40,10 +40,33 @@ ApplicationWindow {
             window.width = 540;
             window.height = 70;
         }
+
+        ColumnLayout {
+            Text {
+                color: "black"
+                Layout.alignment: Qt.AlignLeft
+                text: "Settings"
+            }
+
+            RowLayout {
+                Text {
+                    id: rightlabel
+                    color: "black"
+                    Layout.alignment: Qt.AlignLeft
+                    text: "Placeholder"
+                }
+
+                Slider {
+                    id: slider
+                    Layout.alignment: Qt.AlignRight
+                    value: 0.5
+                }
+            }
+        }
     }
 
     ColumnLayout {
-        id: columnLayout
+        id: columnLayout2
         anchors.fill: parent
 
         Row {
