@@ -79,6 +79,10 @@ ApplicationWindow {
                     popup.open();
                 }
             }
+            ComboBox {
+                width: 200
+                model: ["Placeholder", "Placeholder", "Placeholder"]
+            }
         }
 
         ListView {
