@@ -3,7 +3,6 @@ name = "bless"
 version = "0.3.0"
 description = "Qur'an for Desktop"
 authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه"]
-license = "GPL-3.0-only"
 readme = "README.md"
 packages = [
     { include = "bless_qt" },
