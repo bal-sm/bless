@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bless"
-version = "0.2.0"
+version = "0.3.0"
 description = "Qur'an for Desktop"
 authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه"]
 license = "GPL-3.0-only"
