@@ -10,16 +10,19 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bless_server.settings")
 django.setup()
 
 # noreorder
+from bless_qt.dquran.models import surat_model
 from bless_qt.dquran.models import quran_model
 from bless_qt.dquran.views import quran_main_qml_path
 
 if __name__ == "__main__":
     qurans = quran_model()
+    surats = surat_model()
 
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
 
     engine.rootContext().setContextProperty("quranmodel", qurans)
+    engine.rootContext().setContextProperty("suratModel", surats)
     engine.load(quran_main_qml_path())
 
     app.exec()

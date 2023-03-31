@@ -81,7 +81,7 @@ ApplicationWindow {
             }
             ComboBox {
                 width: 200
-                model: ["Placeholder", "Placeholder", "Placeholder"]
+                model: suratModel
             }
         }
 
