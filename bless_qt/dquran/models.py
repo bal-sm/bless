@@ -21,15 +21,16 @@ def quran_model():
 
 
 def surat_model():
+    SuratInQtRole = QtCore.Qt.UserRole + 2
     model = QtGui.QStandardItemModel()
-    # model.setItemRoleNames({AyatInQtRole: b"ayatinqt"})
+    model.setItemRoleNames({SuratInQtRole: b"suratinqt"})
     # ayo kita lihat apa bisa kalo ga di set dulu item role names nya
 
     surats = Surat.objects.all()
 
     for surat in surats:
         it = QtGui.QStandardItem()
-        it.setData(surat)
+        it.setData(surat.name, SuratInQtRole)
         # Soalnya kan ada string method tea, terus jadi gampang id nya.
         model.appendRow(it)
 
