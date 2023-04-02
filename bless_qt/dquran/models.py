@@ -36,3 +36,18 @@ def surat_model():
 
     return model
     # Ya Allah swt., this set of backend and frontend is the best. Thank you for utusan-Mu (saw.) ya Rabb-ku
+
+
+def get_surat_specific_with_name(surat_name):
+    # Harusnya pake id tapi ya udahlah gini aja dulu pake name
+    AyatInQtRole = QtCore.Qt.UserRole + 3
+    model = QtGui.QStandardItemModel()
+    model.setItemRoleNames({AyatInQtRole: b"ayatinqt"})
+    ayatships = Ayatship.objects.filter(surat__name=surat_name)
+
+    for ayat in ayatships:
+        it = QtGui.QStandardItem()
+        it.setData(ayat.ayat.text, AyatInQtRole)
+        model.appendRow(it)
+
+    return model
