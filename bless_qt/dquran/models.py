@@ -3,10 +3,9 @@ from dquran.models import Surat
 from PySide6 import QtCore
 from PySide6 import QtGui
 
-AyatInQtRole = QtCore.Qt.UserRole + 1
-
 
 def quran_model():
+    AyatInQtRole = QtCore.Qt.UserRole + 1
     model = QtGui.QStandardItemModel()
     model.setItemRoleNames({AyatInQtRole: b"ayatinqt"})
 
