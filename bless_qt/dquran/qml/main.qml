@@ -91,10 +91,8 @@ ApplicationWindow {
             Layout.fillHeight: true
             Layout.fillWidth: true
 
-            Flickable {
-                Label {
-                    text: "yang panjanggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
-                }
+            Label {
+                text: "yang panjanggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
             }
             // ListView {
             //     // bener pake ListView
