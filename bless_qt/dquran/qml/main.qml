@@ -83,6 +83,9 @@ ApplicationWindow {
             ComboBox {
                 width: 200
                 model: suratModel
+                // onClicked: {
+                //     ayats.text = bridge.getAyatsForSurat(yangDiKlikDiComboBoxKumahaNya)
+                // }
             }
         }
 
@@ -93,6 +96,7 @@ ApplicationWindow {
             Layout.fillWidth: true
 
             Label {
+                // id: ayats
                 text: "yang panjanggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
             }
             // ListView {
