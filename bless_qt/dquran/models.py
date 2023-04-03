@@ -50,3 +50,14 @@ def get_surat_specific_with_name(surat_name):
         model.appendRow(it)
 
     return model
+
+
+def return_ayats(surat_name):
+    # Harusnya pake id tapi ya udahlah gini aja dulu pake name
+    ayatships = Ayatship.objects.filter(surat__name=surat_name)
+
+    ayats = ""
+    for ayatship in ayatships:
+        ayats.join(ayatship.ayat.text)
+
+    return ayats
