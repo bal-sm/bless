@@ -85,20 +85,28 @@ ApplicationWindow {
             }
         }
 
-        ListView {
-            // bener pake ListView
-            id: quransView
+        ScrollView {
+            id: quranScrollView
             Layout.alignment: Qt.AlignTop
             Layout.fillHeight: true
             Layout.fillWidth: true
-            model: quranmodel
-            orientation: Qt.Horizontal
-            layoutDirection: Qt.RightToLeft
 
-            // Ayat highlighter pake rectangle thing tea.anAyat
-            // value dari ListView teh nanti yang
-            // word per ayat nanti di Django nya pake model per word nya id={1 2 3 4 5} nanti nulisnya mau meninggal pusing mikirnya, terus nanti modelnya string berupa 4 (alif) 1 (lam) 2 (ra') aja nanti ini mah, di surga. belajar unicode caranya kenapa bisa gitu.)
-            delegate: ayatDelegate
+            Flickable {
+                Label {
+                    text: "yang panjanggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+                }
+            }
+            // ListView {
+            //     // bener pake ListView
+            //     model: quranmodel
+            //     orientation: Qt.Horizontal
+            //     layoutDirection: Qt.RightToLeft
+
+            //     // Ayat highlighter pake rectangle thing tea.anAyat
+            //     // value dari ListView teh nanti yang
+            //     // word per ayat nanti di Django nya pake model per word nya id={1 2 3 4 5} nanti nulisnya mau meninggal pusing mikirnya, terus nanti modelnya string berupa 4 (alif) 1 (lam) 2 (ra') aja nanti ini mah, di surga. belajar unicode caranya kenapa bisa gitu.)
+            //     delegate: ayatDelegate
+            // }
         }
     }
 }
