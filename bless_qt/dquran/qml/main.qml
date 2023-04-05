@@ -90,6 +90,7 @@ ApplicationWindow {
                 // onClicked: {
                 //     ayats.text = bridge.getAyatsForSurat(yangDiKlikDiComboBoxKumahaNya)
                 // }
+                // "bukan onClicked, sayang." - Allah swt. and Muhammad saw.
             }
         }
 
@@ -102,6 +103,8 @@ ApplicationWindow {
             Label {
                 // id: ayats
                 text: "yang panjanggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+                // text: bridge.getAyatsForSurat("An-Nās")
+                // TypeError: Cannot call method 'getAyatsForSurat' of null
             }
             // ListView {
             //     // bener pake ListView
