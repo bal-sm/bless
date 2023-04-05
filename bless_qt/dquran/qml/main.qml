@@ -11,6 +11,10 @@ ApplicationWindow {
     visible: true
     title: qsTr("Qur'an")
 
+    Bridge {
+        id: bridge
+    }
+
     Component {
         id: ayatDelegate
 
