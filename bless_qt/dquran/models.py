@@ -52,8 +52,15 @@ def get_surat_specific_with_name(surat_name):
     return model
 
 
-def return_ayats(surat_name):
+def return_ayats(surat_name=None):
     # Harusnya pake id tapi ya udahlah gini aja dulu pake name
+    if surat_name is None:
+        # asalnya if surat_name == None:
+        # but
+        # bless_qt/dquran/models.py:57:19: E711 comparison to None should be 'if cond is None:'
+        first_surat = Surat.objects.all().first()
+        surat_name = first_surat.name
+
     ayatships = Ayatship.objects.filter(surat__name=surat_name)
 
     ayats = ""
