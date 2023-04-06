@@ -65,6 +65,6 @@ def return_ayats(surat_name=None):
 
     ayats = ""
     for ayatship in ayatships:
-        ayats.join(ayatship.ayat.text)
+        ayats += ayatship.ayat.text
 
     return ayats
