@@ -17,7 +17,7 @@ bless-server = { git = "https://github.com/bal-sm/bless_server.git", tag = "0.7.
 
 
 [tool.poetry.group.dev.dependencies]
-python-lsp-server = {extras = ["all"], version = "^1.7.1"}
+python-lsp-server = {extras = ["all"], version = "^1.7.2"}
 
 [tool.poetry.scripts]
 bless-start = "main:main"
