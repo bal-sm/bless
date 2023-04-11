@@ -101,10 +101,13 @@ ApplicationWindow {
             Layout.fillWidth: true
 
             Label {
-                // id: ayats
+                id: ayats
                 text: "yang panjanggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
                 // text: bridge.getAyatsForSurat("An-Nās")
                 // TypeError: Cannot call method 'getAyatsForSurat' of null
+                Component.onCompleted: {
+                    ayats.text = bridge.getAyatsForSurat("An-Nās");
+                }
             }
             // ListView {
             //     // bener pake ListView
