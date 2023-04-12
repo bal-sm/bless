@@ -26,8 +26,8 @@ QML_IMPORT_MAJOR_VERSION = 1
 class Bridge(QObject):
     @Slot(str, result=str)
     def getAyatsForSurat(self, s):
-        # return ayats
-        return return_ayats(s)
+        ayats = return_ayats(s)
+        return ayats
 
 
 if __name__ == "__main__":
