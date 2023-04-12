@@ -15,8 +15,7 @@ django.setup()
 # noreorder
 from bless_qt.dquran.models import surat_model
 from bless_qt.dquran.models import quran_model
-from dquran.models import Surat
-from dquran.models import Ayatship
+from bless_qt.dquran.models import return_ayats
 from bless_qt.dquran.views import quran_main_qml_path
 
 QML_IMPORT_NAME = "md.ayatproperties"
@@ -27,19 +26,7 @@ QML_IMPORT_MAJOR_VERSION = 1
 class Bridge(QObject):
     @Slot(str, result=str)
     def getAyatsForSurat(self, s):
-        if s is None:
-            # asalnya if surat_name == None:
-            # but
-            # bless_qt/dquran/models.py:57:19: E711 comparison to None should be 'if cond is None:'
-            first_surat = Surat.objects.all().first()
-            s = first_surat.name
-
-        ayatships = Ayatship.objects.filter(surat__name=s)
-
-        ayats = ""
-        for ayatship in ayatships:
-            ayats += ayatship.ayat.text
-
+        ayats = return_ayats(s)
         return ayats
 
 
