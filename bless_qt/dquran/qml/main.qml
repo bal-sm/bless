@@ -106,7 +106,7 @@ ApplicationWindow {
                 // text: bridge.getAyatsForSurat("An-Nās")
                 // TypeError: Cannot call method 'getAyatsForSurat' of null
                 Component.onCompleted: {
-                    ayats.text = bridge.getAyatsForSurat("An-Nās");
+                    ayats.text = bridge.kontolBadag("Aa");
                 }
             }
             // ListView {

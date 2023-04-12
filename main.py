@@ -29,6 +29,11 @@ class Bridge(QObject):
         # return ayats
         return return_ayats(s)
 
+    @Slot(str, result=str)
+    def kontolBadag(self, s):
+        wow = "Kontol " + s + " Badag"
+        return wow
+
 
 if __name__ == "__main__":
     qurans = quran_model()
