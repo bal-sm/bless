@@ -107,7 +107,7 @@ ApplicationWindow {
 
             Label {
                 id: ayats
-                text: "yang panjanggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+                text: "Loading"
                 // text: bridge.getAyatsForSurat("An-Nās")
                 // TypeError: Cannot call method 'getAyatsForSurat' of null
                 Component.onCompleted: {
