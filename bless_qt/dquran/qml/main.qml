@@ -92,6 +92,7 @@ ApplicationWindow {
                 // }
                 // "bukan onClicked, sayang." - Allah swt. and Muhammad saw.
                 onActivated: {
+                    ayats.text = bridge.getAyatsForSurat(currentText);
                     console.log(currentText);
                 }
             }
