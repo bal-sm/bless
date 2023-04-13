@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Window
+import md.ayatproperties
 
 ApplicationWindow {
     id: window
@@ -9,6 +10,10 @@ ApplicationWindow {
     height: 70
     visible: true
     title: qsTr("Qur'an")
+
+    Bridge {
+        id: bridge
+    }
 
     Component {
         id: ayatDelegate
@@ -80,25 +85,46 @@ ApplicationWindow {
                 }
             }
             ComboBox {
+                id: suratComboBox
                 width: 200
-                model: ["Placeholder", "Placeholder", "Placeholder"]
+                model: suratModel
+                // onClicked: {
+                //     ayats.text = bridge.getAyatsForSurat(yangDiKlikDiComboBoxKumahaNya)
+                // }
+                // "bukan onClicked, sayang." - Allah swt. and Muhammad saw.
+                onActivated: {
+                    ayats.text = bridge.getAyatsForSurat(currentText);
+                    console.log(currentText);
+                }
             }
         }
 
-        ListView {
-            // bener pake ListView
-            id: quransView
+        ScrollView {
+            id: quranScrollView
             Layout.alignment: Qt.AlignTop
             Layout.fillHeight: true
             Layout.fillWidth: true
-            model: quranmodel
-            orientation: Qt.Horizontal
-            layoutDirection: Qt.RightToLeft
 
-            // Ayat highlighter pake rectangle thing tea.anAyat
-            // value dari ListView teh nanti yang
-            // word per ayat nanti di Django nya pake model per word nya id={1 2 3 4 5} nanti nulisnya mau meninggal pusing mikirnya, terus nanti modelnya string berupa 4 (alif) 1 (lam) 2 (ra') aja nanti ini mah, di surga. belajar unicode caranya kenapa bisa gitu.)
-            delegate: ayatDelegate
+            Label {
+                id: ayats
+                text: "Loading"
+                // text: bridge.getAyatsForSurat("An-Nās")
+                // TypeError: Cannot call method 'getAyatsForSurat' of null
+                Component.onCompleted: {
+                    ayats.text = bridge.getAyatsForSurat(suratComboBox.currentText);
+                }
+            }
+            // ListView {
+            //     // bener pake ListView
+            //     model: quranmodel
+            //     orientation: Qt.Horizontal
+            //     layoutDirection: Qt.RightToLeft
+
+            //     // Ayat highlighter pake rectangle thing tea.anAyat
+            //     // value dari ListView teh nanti yang
+            //     // word per ayat nanti di Django nya pake model per word nya id={1 2 3 4 5} nanti nulisnya mau meninggal pusing mikirnya, terus nanti modelnya string berupa 4 (alif) 1 (lam) 2 (ra') aja nanti ini mah, di surga. belajar unicode caranya kenapa bisa gitu.)
+            //     delegate: ayatDelegate
+            // }
         }
     }
 }
