@@ -85,6 +85,7 @@ ApplicationWindow {
                 }
             }
             ComboBox {
+                id: suratComboBox
                 width: 200
                 model: suratModel
                 // onClicked: {
