@@ -29,6 +29,14 @@ class Bridge(QObject):
         ayats = return_ayats(s)
         return ayats
 
+    @Slot(float, result=int)
+    def getSize(self, s):
+        size = int(s * 34)
+        if size <= 0:
+            return 1
+        else:
+            return size
+
 
 if __name__ == "__main__":
     qurans = quran_model()

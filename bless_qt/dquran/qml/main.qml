@@ -65,6 +65,9 @@ ApplicationWindow {
                     id: slider
                     Layout.alignment: Qt.AlignRight
                     value: 0.5
+                    onValueChanged: {
+                        ayats.font.pointSize = bridge.getSize(slider.value);
+                    }
                 }
             }
         }
