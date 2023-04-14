@@ -85,3 +85,12 @@ def create_config_if_does_not_exist():
 
         with open("bless-qt_config.ini", "w") as example:
             config.write(example)
+
+
+def get_font_size_from_config():
+    config_data = configparser.ConfigParser()
+    config_data.read("bless-qt_config.ini")
+
+    font_size = int(config_data["dquran"]["font_size"])
+
+    return font_size
