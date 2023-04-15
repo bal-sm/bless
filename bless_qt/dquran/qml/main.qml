@@ -114,6 +114,7 @@ ApplicationWindow {
                 // text: bridge.getAyatsForSurat("An-Nās")
                 // TypeError: Cannot call method 'getAyatsForSurat' of null
                 Component.onCompleted: {
+                    ayats.font.pointSize = bridge.getSize(0);
                     ayats.text = bridge.getAyatsForSurat(suratComboBox.currentText);
                 }
             }

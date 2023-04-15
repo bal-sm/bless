@@ -16,6 +16,9 @@ django.setup()
 from bless_qt.dquran.models import surat_model
 from bless_qt.dquran.models import quran_model
 from bless_qt.dquran.models import return_ayats
+from bless_qt.dquran.models import create_config_if_does_not_exist
+from bless_qt.dquran.models import get_font_size_from_config
+from bless_qt.dquran.models import write_font_size_to_config
 from bless_qt.dquran.views import quran_main_qml_path
 
 QML_IMPORT_NAME = "md.ayatproperties"
@@ -31,11 +34,17 @@ class Bridge(QObject):
 
     @Slot(float, result=int)
     def getSize(self, s):
-        size = int(s * 34)
-        if size <= 0:
-            return 1
-        else:
+        if s == 0:
+            create_config_if_does_not_exist()
+            size = get_font_size_from_config()
             return size
+        else:
+            size = int(s * 34)
+            write_font_size_to_config(size)
+            if size <= 0:
+                return 1
+            else:
+                return size
 
 
 if __name__ == "__main__":
