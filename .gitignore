@@ -142,3 +142,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# bless-qt config file
+bless-qt_config.ini

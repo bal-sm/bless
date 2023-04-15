@@ -58,13 +58,20 @@ ApplicationWindow {
                     id: rightlabel
                     color: "black"
                     Layout.alignment: Qt.AlignLeft
-                    text: "Placeholder"
+                    text: "Font size"
                 }
 
                 Slider {
                     id: slider
                     Layout.alignment: Qt.AlignRight
                     value: 0.5
+                    onValueChanged: {
+                        ayats.font.pointSize = bridge.getSize(slider.value);
+                    }
+                    Component.onCompleted: {
+                        slider.value = bridge.returnSliderValueFromConfig(0);
+                        console.log(slider.value);
+                    }
                 }
             }
         }
@@ -111,6 +118,7 @@ ApplicationWindow {
                 // text: bridge.getAyatsForSurat("An-Nās")
                 // TypeError: Cannot call method 'getAyatsForSurat' of null
                 Component.onCompleted: {
+                    ayats.font.pointSize = bridge.getSize(0);
                     ayats.text = bridge.getAyatsForSurat(suratComboBox.currentText);
                 }
             }

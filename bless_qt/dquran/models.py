@@ -1,3 +1,6 @@
+import configparser
+import os
+
 from dquran.models import Ayatship
 from dquran.models import Surat
 from PySide6 import QtCore
@@ -68,3 +71,36 @@ def return_ayats(surat_name=None):
         ayats += ayatship.ayat.text
 
     return ayats
+
+
+def create_config_if_does_not_exist():
+    path = "bless-qt_config.ini"
+
+    if not os.path.isfile(path):
+        config = configparser.ConfigParser()
+
+        config.add_section("dquran")
+
+        config.set("dquran", "font_size", "16")
+
+        with open("bless-qt_config.ini", "w") as example:
+            config.write(example)
+
+
+def get_font_size_from_config():
+    config_data = configparser.ConfigParser()
+    config_data.read("bless-qt_config.ini")
+
+    font_size = int(config_data["dquran"]["font_size"])
+
+    return font_size
+
+
+def write_font_size_to_config(font_size):
+    config_data = configparser.ConfigParser()
+    config_data.read("bless-qt_config.ini")
+
+    config_data["dquran"]["font_size"] = str(font_size)
+
+    with open("bless-qt_config.ini", "w") as example:
+        config_data.write(example)
