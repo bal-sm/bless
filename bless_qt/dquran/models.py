@@ -94,3 +94,13 @@ def get_font_size_from_config():
     font_size = int(config_data["dquran"]["font_size"])
 
     return font_size
+
+
+def write_font_size_to_config(font_size):
+    config_data = configparser.ConfigParser()
+    config_data.read("bless-qt_config.ini")
+
+    config_data["dquran"]["font_size"] = str(font_size)
+
+    with open("bless-qt_config.ini", "w") as example:
+        config_data.write(example)
