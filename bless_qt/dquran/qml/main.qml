@@ -120,7 +120,15 @@ ApplicationWindow {
                 Component.onCompleted: {
                     ayats.font.pointSize = bridge.getSize(0);
                     ayats.text = bridge.getAyatsForSurat(suratComboBox.currentText);
+                    ayatsScrollBarHorizontal.position = (1.0 - ayatsScrollBarHorizontal.size);
                 }
+            }
+
+            ScrollBar.horizontal: ScrollBar {
+                id: ayatsScrollBarHorizontal
+                anchors.left: quranScrollView.left
+                anchors.right: quranScrollView.right
+                anchors.bottom: quranScrollView.bottom
             }
             // ListView {
             //     // bener pake ListView
