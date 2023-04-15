@@ -46,6 +46,12 @@ class Bridge(QObject):
             else:
                 return size
 
+    @Slot(float, result=float)
+    def returnSliderValueFromConfig(self, s):
+        font_size = get_font_size_from_config()
+        slider_value = int(font_size) / 34
+        return slider_value
+
 
 if __name__ == "__main__":
     qurans = quran_model()

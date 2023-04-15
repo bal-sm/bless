@@ -68,6 +68,10 @@ ApplicationWindow {
                     onValueChanged: {
                         ayats.font.pointSize = bridge.getSize(slider.value);
                     }
+                    Component.onCompleted: {
+                        slider.value = bridge.returnSliderValueFromConfig(0);
+                        console.log(slider.value);
+                    }
                 }
             }
         }
