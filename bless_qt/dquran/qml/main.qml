@@ -82,10 +82,6 @@ ApplicationWindow {
                 id: suratComboBox
                 width: 200
                 model: suratModel
-                // onClicked: {
-                //     ayats.text = bridge.getAyatsForSurat(yangDiKlikDiComboBoxKumahaNya)
-                // }
-                // "bukan onClicked, sayang." - Allah swt. and Muhammad saw.
                 onActivated: {
                     ayats.text = bridge.getAyatsForSurat(currentText);
                     console.log(currentText);
