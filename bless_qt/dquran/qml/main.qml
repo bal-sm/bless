@@ -26,7 +26,7 @@ ApplicationWindow {
 
         onClosed: {
             window.width = 540;
-            window.height = 70;
+            // window.height = 70;
         }
 
         ColumnLayout {
