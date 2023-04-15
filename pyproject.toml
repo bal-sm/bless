@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bless"
-version = "0.6.0"
+version = "0.7.0"
 description = "Qur'an for Desktop"
 authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه"]
 readme = "README.md"
