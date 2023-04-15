@@ -104,3 +104,13 @@ def write_font_size_to_config(font_size):
 
     with open("bless-qt_config.ini", "w") as example:
         config_data.write(example)
+
+
+ar_num = "۰١٢٣٤٥٦٧٨٩"
+eng_num = "0123456789"
+
+
+def convert_eng_num_to_ar_num(the_numbers):
+    table = str.maketrans(eng_num, ar_num)
+    converted = str(the_numbers).translate(table)
+    return converted
