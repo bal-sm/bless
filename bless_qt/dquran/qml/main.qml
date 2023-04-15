@@ -126,6 +126,9 @@ ApplicationWindow {
 
             ScrollBar.horizontal: ScrollBar {
                 id: ayatsScrollBarHorizontal
+                anchors.left: quranScrollView.left
+                anchors.right: quranScrollView.right
+                anchors.bottom: quranScrollView.bottom
             }
             // ListView {
             //     // bener pake ListView
