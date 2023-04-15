@@ -58,7 +58,7 @@ ApplicationWindow {
                     id: rightlabel
                     color: "black"
                     Layout.alignment: Qt.AlignLeft
-                    text: "Placeholder"
+                    text: "Font size"
                 }
 
                 Slider {
