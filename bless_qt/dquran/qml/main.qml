@@ -15,23 +15,6 @@ ApplicationWindow {
         id: bridge
     }
 
-    Component {
-        id: ayatDelegate
-
-        Rectangle {
-            id: wrapper
-            height: anAyat.contentHeight
-            width: anAyat.contentWidth
-
-            Text {
-                id: anAyat
-                text: model.ayatinqt
-                font.pointSize: 16
-                horizontalAlignment: Text.AlignRight
-            }
-        }
-    }
-
     Popup {
         id: popup
         anchors.centerIn: parent
