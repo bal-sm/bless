@@ -63,7 +63,7 @@ ApplicationWindow {
     }
 
     ColumnLayout {
-        id: columnLayout2
+        id: columnLayout1
         anchors.fill: parent
 
         Row {
