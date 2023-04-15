@@ -46,15 +46,15 @@ ApplicationWindow {
                 }
 
                 Slider {
-                    id: slider
+                    id: fontSizeSlider
                     Layout.alignment: Qt.AlignRight
                     value: 0.5
                     onValueChanged: {
-                        ayats.font.pointSize = bridge.getSize(slider.value);
+                        ayats.font.pointSize = bridge.getSize(fontSizeSlider.value);
                     }
                     Component.onCompleted: {
-                        slider.value = bridge.returnSliderValueFromConfig(0);
-                        console.log(slider.value);
+                        fontSizeSlider.value = bridge.returnSliderValueFromConfig(0);
+                        console.log(fontSizeSlider.value);
                     }
                 }
             }
