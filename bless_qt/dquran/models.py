@@ -69,6 +69,10 @@ def return_ayats(surat_name=None):
     ayats = ""
     for ayatship in ayatships:
         ayats += ayatship.ayat.text
+        ayats += " "
+        ayat_number = convert_eng_num_to_ar_num(ayatship.number)
+        ayats += ayat_number
+        ayats += " "
 
     return ayats
 
