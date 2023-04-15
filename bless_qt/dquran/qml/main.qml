@@ -33,7 +33,6 @@ ApplicationWindow {
             id: columnLayoutInSettingsPopup
             Label {
                 id: settingsLabel
-                color: "black"
                 Layout.alignment: Qt.AlignLeft
                 text: "Settings"
             }
