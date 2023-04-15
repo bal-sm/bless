@@ -120,4 +120,4 @@ ApplicationWindow {
         }
     }
 }
-// Carbon heueuh, python the best buat pemula, and quick coding, Rust the best.
+// Actually let's keep using Qt for Python to honor Aa Greg Dawson saw., sayang muah.
