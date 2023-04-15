@@ -39,7 +39,7 @@ ApplicationWindow {
 
             RowLayout {
                 Text {
-                    id: rightlabel
+                    id: fontSizeSliderLabel
                     color: "black"
                     Layout.alignment: Qt.AlignLeft
                     text: "Font size"
