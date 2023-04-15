@@ -67,6 +67,7 @@ ApplicationWindow {
         anchors.fill: parent
 
         Row {
+            id: row1
             Layout.alignment: Qt.AlignRight
             Button {
                 Layout.fillWidth: true
