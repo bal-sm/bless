@@ -16,7 +16,7 @@ ApplicationWindow {
     }
 
     Popup {
-        id: popup
+        id: settingsPopup
         anchors.centerIn: parent
         width: 500
         height: 200
@@ -71,7 +71,7 @@ ApplicationWindow {
                 text: "Settings"
                 onClicked: {
                     window.height = 300;
-                    popup.open();
+                    settingsPopup.open();
                 }
             }
             ComboBox {
