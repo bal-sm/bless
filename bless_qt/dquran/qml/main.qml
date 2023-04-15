@@ -70,6 +70,7 @@ ApplicationWindow {
             id: row1
             Layout.alignment: Qt.AlignRight
             Button {
+                id: settingButton
                 Layout.fillWidth: true
                 text: "Settings"
                 onClicked: {
