@@ -30,7 +30,8 @@ ApplicationWindow {
         }
 
         ColumnLayout {
-            Text {
+            Label {
+                id: settingsLabel
                 color: "black"
                 Layout.alignment: Qt.AlignLeft
                 text: "Settings"
