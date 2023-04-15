@@ -15,25 +15,8 @@ ApplicationWindow {
         id: bridge
     }
 
-    Component {
-        id: ayatDelegate
-
-        Rectangle {
-            id: wrapper
-            height: anAyat.contentHeight
-            width: anAyat.contentWidth
-
-            Text {
-                id: anAyat
-                text: model.ayatinqt
-                font.pointSize: 16
-                horizontalAlignment: Text.AlignRight
-            }
-        }
-    }
-
     Popup {
-        id: popup
+        id: settingsPopup
         anchors.centerIn: parent
         width: 500
         height: 200
@@ -47,30 +30,30 @@ ApplicationWindow {
         }
 
         ColumnLayout {
-            Text {
-                color: "black"
+            id: columnLayoutInSettingsPopup
+            Label {
+                id: settingsLabel
                 Layout.alignment: Qt.AlignLeft
                 text: "Settings"
             }
 
             RowLayout {
-                Text {
-                    id: rightlabel
-                    color: "black"
+                Label {
+                    id: fontSizeSliderLabel
                     Layout.alignment: Qt.AlignLeft
                     text: "Font size"
                 }
 
                 Slider {
-                    id: slider
+                    id: fontSizeSlider
                     Layout.alignment: Qt.AlignRight
                     value: 0.5
                     onValueChanged: {
-                        ayats.font.pointSize = bridge.getSize(slider.value);
+                        ayats.font.pointSize = bridge.getSize(fontSizeSlider.value);
                     }
                     Component.onCompleted: {
-                        slider.value = bridge.returnSliderValueFromConfig(0);
-                        console.log(slider.value);
+                        fontSizeSlider.value = bridge.returnSliderValueFromConfig(0);
+                        console.log(fontSizeSlider.value);
                     }
                 }
             }
@@ -78,27 +61,25 @@ ApplicationWindow {
     }
 
     ColumnLayout {
-        id: columnLayout2
+        id: columnLayout1
         anchors.fill: parent
 
         Row {
+            id: row1
             Layout.alignment: Qt.AlignRight
             Button {
+                id: settingButton
                 Layout.fillWidth: true
                 text: "Settings"
                 onClicked: {
                     window.height = 300;
-                    popup.open();
+                    settingsPopup.open();
                 }
             }
             ComboBox {
                 id: suratComboBox
                 width: 200
                 model: suratModel
-                // onClicked: {
-                //     ayats.text = bridge.getAyatsForSurat(yangDiKlikDiComboBoxKumahaNya)
-                // }
-                // "bukan onClicked, sayang." - Allah swt. and Muhammad saw.
                 onActivated: {
                     ayats.text = bridge.getAyatsForSurat(currentText);
                     console.log(currentText);
@@ -115,33 +96,20 @@ ApplicationWindow {
             Label {
                 id: ayats
                 text: "Loading"
-                // text: bridge.getAyatsForSurat("An-Nās")
-                // TypeError: Cannot call method 'getAyatsForSurat' of null
                 Component.onCompleted: {
                     ayats.font.pointSize = bridge.getSize(0);
                     ayats.text = bridge.getAyatsForSurat(suratComboBox.currentText);
-                    ayatsScrollBarHorizontal.position = (1.0 - ayatsScrollBarHorizontal.size);
+                    quranScrollBarHorizontal.position = (1.0 - quranScrollBarHorizontal.size);
                 }
             }
 
             ScrollBar.horizontal: ScrollBar {
-                id: ayatsScrollBarHorizontal
+                id: quranScrollBarHorizontal
                 anchors.left: quranScrollView.left
                 anchors.right: quranScrollView.right
                 anchors.bottom: quranScrollView.bottom
             }
-            // ListView {
-            //     // bener pake ListView
-            //     model: quranmodel
-            //     orientation: Qt.Horizontal
-            //     layoutDirection: Qt.RightToLeft
-
-            //     // Ayat highlighter pake rectangle thing tea.anAyat
-            //     // value dari ListView teh nanti yang
-            //     // word per ayat nanti di Django nya pake model per word nya id={1 2 3 4 5} nanti nulisnya mau meninggal pusing mikirnya, terus nanti modelnya string berupa 4 (alif) 1 (lam) 2 (ra') aja nanti ini mah, di surga. belajar unicode caranya kenapa bisa gitu.)
-            //     delegate: ayatDelegate
-            // }
         }
     }
 }
-// Carbon heueuh, python the best buat pemula, and quick coding, Rust the best.
+// Actually let's keep using Qt for Python to honor Aa Greg Dawson saw., sayang muah.
