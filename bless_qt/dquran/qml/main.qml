@@ -30,6 +30,7 @@ ApplicationWindow {
         }
 
         ColumnLayout {
+            id: columnLayoutInSettingsPopup
             Label {
                 id: settingsLabel
                 color: "black"
