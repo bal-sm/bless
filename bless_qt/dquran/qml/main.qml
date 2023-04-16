@@ -100,6 +100,7 @@ ApplicationWindow {
                     ayats.font.pointSize = bridge.getSize(0);
                     ayats.text = bridge.getAyatsForSurat(suratComboBox.currentText);
                     quranScrollBarHorizontal.position = (1.0 - quranScrollBarHorizontal.size);
+                    console.log("`ayats` `Component.onCompleted` `columnLayout1.height` = " + columnLayout1.height);
                 }
             }
 
