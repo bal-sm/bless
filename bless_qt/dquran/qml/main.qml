@@ -82,7 +82,7 @@ ApplicationWindow {
                 model: suratModel
                 onActivated: {
                     ayats.text = bridge.getAyatsForSurat(currentText);
-                    console.log(currentText);
+                    console.log("`suratComboBox` `onActivated` `currentText` = " + currentText);
                 }
             }
         }
