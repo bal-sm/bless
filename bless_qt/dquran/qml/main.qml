@@ -53,7 +53,7 @@ ApplicationWindow {
                     }
                     Component.onCompleted: {
                         fontSizeSlider.value = bridge.returnSliderValueFromConfig(0);
-                        console.log(fontSizeSlider.value);
+                        console.log("`fontSizeSlider` `Component.onCompleted` `fontSizeSlider.value` = " + fontSizeSlider.value);
                     }
                 }
             }
