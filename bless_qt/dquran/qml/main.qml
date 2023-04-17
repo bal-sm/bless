@@ -105,6 +105,7 @@ ApplicationWindow {
                     window.height = ayats.height;
                     console.log("`Label` `Component.onCompleted` `row1.height` = " + row1.height);
                     console.log("`Label` `Component.onCompleted` `settingButton.height` = " + settingButton.height);
+                    console.log("`Label` `Component.onCompleted` `quranScrollView.height` = " + quranScrollView.height);
                 }
             }
 
