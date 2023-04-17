@@ -27,6 +27,8 @@ ApplicationWindow {
         onClosed: {
             window.width = 540;
             window.height = row1.height + ayats.height + 7;
+            window.minimumHeight = row1.height + ayats.height + 7;
+            window.maximumHeight = row1.height + ayats.height + 7;
         }
 
         ColumnLayout {
@@ -75,6 +77,8 @@ ApplicationWindow {
                 text: "Settings"
                 onClicked: {
                     window.height = 300;
+                    window.minimumHeight = 300;
+                    window.maximumHeight = 300;
                     settingsPopup.open();
                 }
             }
@@ -104,6 +108,8 @@ ApplicationWindow {
                     quranScrollBarHorizontal.position = (1.0 - quranScrollBarHorizontal.size);
                     console.log("`ayats` `Component.onCompleted` `columnLayout1.height` = " + columnLayout1.height);
                     window.height = row1.height + ayats.height + 7;
+                    window.minimumHeight = row1.height + ayats.height + 7;
+                    window.maximumHeight = row1.height + ayats.height + 7;
                     console.log("`Label` `Component.onCompleted` `row1.height` = " + row1.height);
                     console.log("`Label` `Component.onCompleted` `settingButton.height` = " + settingButton.height);
                     console.log("`Label` `Component.onCompleted` `quranScrollView.height` = " + quranScrollView.height);
