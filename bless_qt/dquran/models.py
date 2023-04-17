@@ -118,3 +118,12 @@ def convert_eng_num_to_ar_num(the_numbers):
     table = str.maketrans(eng_num, ar_num)
     converted = str(the_numbers).translate(table)
     return converted
+
+
+def get_last_window_width():
+    config_data = configparser.ConfigParser()
+    config_data.read("bless-qt_config.ini")
+
+    window_width = int(config_data["dquran"]["window_width"])
+
+    return window_width
