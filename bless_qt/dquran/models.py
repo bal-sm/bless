@@ -139,7 +139,8 @@ def save_last_window_width(width):
     config_data = configparser.ConfigParser()
     config_data.read("bless-qt_config.ini")
 
-    config_data.setdefault("dquran")
+    if "dquran" not in config_data:
+        config_data["dquran"] = {}
 
     config_data["dquran"]["window_width"] = str(width)
 
