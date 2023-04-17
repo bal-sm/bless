@@ -26,7 +26,7 @@ ApplicationWindow {
 
         onClosed: {
             window.width = 540;
-            window.height = ayats.height;
+            window.height = row1.height + ayats.height + 7;
         }
 
         ColumnLayout {
@@ -103,7 +103,7 @@ ApplicationWindow {
                     ayats.text = bridge.getAyatsForSurat(suratComboBox.currentText);
                     quranScrollBarHorizontal.position = (1.0 - quranScrollBarHorizontal.size);
                     console.log("`ayats` `Component.onCompleted` `columnLayout1.height` = " + columnLayout1.height);
-                    window.height = ayats.height;
+                    window.height = row1.height + ayats.height + 7;
                     console.log("`Label` `Component.onCompleted` `row1.height` = " + row1.height);
                     console.log("`Label` `Component.onCompleted` `settingButton.height` = " + settingButton.height);
                     console.log("`Label` `Component.onCompleted` `quranScrollView.height` = " + quranScrollView.height);
