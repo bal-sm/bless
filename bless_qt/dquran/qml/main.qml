@@ -50,7 +50,6 @@ ApplicationWindow {
                     value: 0.5
                     onValueChanged: {
                         ayats.font.pointSize = bridge.getSize(fontSizeSlider.value);
-                        console.log("`fontSizeSlider` `onValueChanged` `ayats.width` = " + ayats.width);
                         console.log("`fontSizeSlider` `onValueChanged` `ayats.height` = " + ayats.height);
                     }
                     Component.onCompleted: {
