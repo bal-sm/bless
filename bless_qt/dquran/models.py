@@ -127,3 +127,15 @@ def get_last_window_width():
     window_width = int(config_data["dquran"]["window_width"])
 
     return window_width
+
+
+def save_last_window_width(width):
+    config_data = configparser.ConfigParser()
+    config_data.read("bless-qt_config.ini")
+
+    config_data.setdefault("dquran")
+
+    config_data["dquran"]["window_width"] = str(width)
+
+    with open("bless-qt_config.ini", "w") as example:
+        config_data.write(example)
