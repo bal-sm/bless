@@ -51,6 +51,7 @@ ApplicationWindow {
                     onValueChanged: {
                         ayats.font.pointSize = bridge.getSize(fontSizeSlider.value);
                         console.log("`fontSizeSlider` `onValueChanged` `ayats.height` = " + ayats.height);
+                        console.log("`fontSizeSlider` `onValueChanged` `quranScrollView.height` = " + quranScrollView.height);
                     }
                     Component.onCompleted: {
                         fontSizeSlider.value = bridge.returnSliderValueFromConfig(0);
