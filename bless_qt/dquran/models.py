@@ -118,3 +118,31 @@ def convert_eng_num_to_ar_num(the_numbers):
     table = str.maketrans(eng_num, ar_num)
     converted = str(the_numbers).translate(table)
     return converted
+
+
+def get_last_window_width():
+    config_data = configparser.ConfigParser()
+    config_data.read("bless-qt_config.ini")
+
+    if "dquran" not in config_data:
+        config_data["dquran"] = {}
+
+    if "window_width" not in config_data["dquran"]:
+        config_data["dquran"]["window_width"] = "540"
+
+    window_width = int(config_data["dquran"]["window_width"])
+
+    return window_width
+
+
+def save_last_window_width(width):
+    config_data = configparser.ConfigParser()
+    config_data.read("bless-qt_config.ini")
+
+    if "dquran" not in config_data:
+        config_data["dquran"] = {}
+
+    config_data["dquran"]["window_width"] = str(width)
+
+    with open("bless-qt_config.ini", "w") as example:
+        config_data.write(example)

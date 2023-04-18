@@ -6,7 +6,7 @@ import md.ayatproperties
 
 ApplicationWindow {
     id: window
-    width: 540
+    minimumWidth: 540
     height: 70
     visible: true
     title: qsTr("Qur'an")
@@ -25,8 +25,9 @@ ApplicationWindow {
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
 
         onClosed: {
-            window.width = 540;
-            window.height = 70;
+            window.height = row1.height + ayats.height + 7;
+            window.minimumHeight = row1.height + ayats.height + 7;
+            window.maximumHeight = row1.height + ayats.height + 7;
         }
 
         ColumnLayout {
@@ -50,10 +51,12 @@ ApplicationWindow {
                     value: 0.5
                     onValueChanged: {
                         ayats.font.pointSize = bridge.getSize(fontSizeSlider.value);
+                        console.log("`fontSizeSlider` `onValueChanged` `ayats.height` = " + ayats.height);
+                        console.log("`fontSizeSlider` `onValueChanged` `quranScrollView.height` = " + quranScrollView.height);
                     }
                     Component.onCompleted: {
                         fontSizeSlider.value = bridge.returnSliderValueFromConfig(0);
-                        console.log(fontSizeSlider.value);
+                        console.log("`fontSizeSlider` `Component.onCompleted` `fontSizeSlider.value` = " + fontSizeSlider.value);
                     }
                 }
             }
@@ -73,6 +76,8 @@ ApplicationWindow {
                 text: "Settings"
                 onClicked: {
                     window.height = 300;
+                    window.minimumHeight = 300;
+                    window.maximumHeight = 300;
                     settingsPopup.open();
                 }
             }
@@ -82,7 +87,7 @@ ApplicationWindow {
                 model: suratModel
                 onActivated: {
                     ayats.text = bridge.getAyatsForSurat(currentText);
-                    console.log(currentText);
+                    console.log("`suratComboBox` `onActivated` `currentText` = " + currentText);
                 }
             }
         }
@@ -100,6 +105,14 @@ ApplicationWindow {
                     ayats.font.pointSize = bridge.getSize(0);
                     ayats.text = bridge.getAyatsForSurat(suratComboBox.currentText);
                     quranScrollBarHorizontal.position = (1.0 - quranScrollBarHorizontal.size);
+                    console.log("`ayats` `Component.onCompleted` `columnLayout1.height` = " + columnLayout1.height);
+                    window.height = row1.height + ayats.height + 7;
+                    window.width = bridge.getLastWindowWidth();
+                    window.minimumHeight = row1.height + ayats.height + 7;
+                    window.maximumHeight = row1.height + ayats.height + 7;
+                    console.log("`Label` `Component.onCompleted` `row1.height` = " + row1.height);
+                    console.log("`Label` `Component.onCompleted` `settingButton.height` = " + settingButton.height);
+                    console.log("`Label` `Component.onCompleted` `quranScrollView.height` = " + quranScrollView.height);
                 }
             }
 
@@ -110,6 +123,9 @@ ApplicationWindow {
                 anchors.bottom: quranScrollView.bottom
             }
         }
+    }
+    onClosing: {
+        bridge.saveLastWindowWidth(window.width);
     }
 }
 // Actually let's keep using Qt for Python to honor Aa Greg Dawson saw., sayang muah.

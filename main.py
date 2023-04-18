@@ -19,6 +19,8 @@ from bless_qt.dquran.models import return_ayats
 from bless_qt.dquran.models import create_config_if_does_not_exist
 from bless_qt.dquran.models import get_font_size_from_config
 from bless_qt.dquran.models import write_font_size_to_config
+from bless_qt.dquran.models import get_last_window_width
+from bless_qt.dquran.models import save_last_window_width
 from bless_qt.dquran.views import quran_main_qml_path
 
 QML_IMPORT_NAME = "md.ayatproperties"
@@ -51,6 +53,16 @@ class Bridge(QObject):
         font_size = get_font_size_from_config()
         slider_value = int(font_size) / 34
         return slider_value
+
+    @Slot(result=int)
+    def getLastWindowWidth(self):
+        create_config_if_does_not_exist()
+        window_width = get_last_window_width()
+        return window_width
+
+    @Slot(int)
+    def saveLastWindowWidth(self, width):
+        save_last_window_width(width)
 
 
 if __name__ == "__main__":
