@@ -25,7 +25,6 @@ ApplicationWindow {
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
 
         onClosed: {
-            window.width = 540;
             window.height = row1.height + ayats.height + 7;
             window.minimumHeight = row1.height + ayats.height + 7;
             window.maximumHeight = row1.height + ayats.height + 7;
