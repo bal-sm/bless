@@ -6,7 +6,7 @@ import md.ayatproperties
 
 ApplicationWindow {
     id: window
-    width: 540
+    minimumWidth: 540
     height: 70
     visible: true
     title: qsTr("Qur'an")
