@@ -108,6 +108,7 @@ ApplicationWindow {
                     quranScrollBarHorizontal.position = (1.0 - quranScrollBarHorizontal.size);
                     console.log("`ayats` `Component.onCompleted` `columnLayout1.height` = " + columnLayout1.height);
                     window.height = row1.height + ayats.height + 7;
+                    window.width = bridge.getLastWindowWidth();
                     window.minimumHeight = row1.height + ayats.height + 7;
                     window.maximumHeight = row1.height + ayats.height + 7;
                     console.log("`Label` `Component.onCompleted` `row1.height` = " + row1.height);
