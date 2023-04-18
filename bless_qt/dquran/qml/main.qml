@@ -125,5 +125,8 @@ ApplicationWindow {
             }
         }
     }
+    onClosing: {
+        bridge.saveLastWindowWidth(window.width);
+    }
 }
 // Actually let's keep using Qt for Python to honor Aa Greg Dawson saw., sayang muah.
