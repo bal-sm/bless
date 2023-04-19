@@ -22,6 +22,7 @@ from bless_qt.dquran.models import write_font_size_to_config
 from bless_qt.dquran.models import get_last_window_width
 from bless_qt.dquran.models import save_last_window_width
 from bless_qt.dquran.views import quran_main_qml_path
+from bless_qt.duser.views import bless_main_qml_path
 
 QML_IMPORT_NAME = "md.ayatproperties"
 QML_IMPORT_MAJOR_VERSION = 1
@@ -74,6 +75,6 @@ if __name__ == "__main__":
 
     engine.rootContext().setContextProperty("quranmodel", qurans)
     engine.rootContext().setContextProperty("suratModel", surats)
-    engine.load(quran_main_qml_path())
+    engine.load(bless_main_qml_path())
 
     app.exec()
