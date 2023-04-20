@@ -28,6 +28,8 @@ ApplicationWindow {
             right: parent.right
         }
         text: "Bless Qur'an"
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
     }
 
     Button {
