@@ -20,9 +20,25 @@ ApplicationWindow{
         }
     }
     
+    Label{
+        id: blessQuranLabel
+        height: 100
+        anchors{
+            top: parent.top
+            left: parent.left
+            right: parent.right
+        }
+        text: "Bless Qur'an"
+    }
+
     Button{
         id: startButton
-        anchors.fill: parent
+        height: 100
+        anchors{
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
         text: "Start"
         onClicked: {
             internal.quranWindowSwitch()
