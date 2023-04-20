@@ -30,6 +30,7 @@ ApplicationWindow {
         text: "Bless Qur'an"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
+        font.pointSize: 20
     }
 
     Button {
