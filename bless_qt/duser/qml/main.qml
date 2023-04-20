@@ -38,8 +38,11 @@ ApplicationWindow {
         height: 100
         anchors {
             left: parent.left
+            leftMargin: 5
             right: parent.right
+            rightMargin: 5
             bottom: parent.bottom
+            bottomMargin: 5
         }
         text: "Start"
         onClicked: {
