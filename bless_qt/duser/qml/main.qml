@@ -2,28 +2,27 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
 
-
-ApplicationWindow{
+ApplicationWindow {
     id: window
     width: 360
     height: 200
     visible: true
     title: qsTr("Bless")
 
-    QtObject{
+    QtObject {
         id: internal
         function quranWindowSwitch() {
-            var component = Qt.createComponent("../../dquran/qml/main.qml")
-            var win = component.createObject()
-            win.show()
-            visible = false
+            var component = Qt.createComponent("../../dquran/qml/main.qml");
+            var win = component.createObject();
+            win.show();
+            visible = false;
         }
     }
-    
-    Label{
+
+    Label {
         id: blessQuranLabel
         height: 100
-        anchors{
+        anchors {
             top: parent.top
             left: parent.left
             right: parent.right
@@ -31,17 +30,17 @@ ApplicationWindow{
         text: "Bless Qur'an"
     }
 
-    Button{
+    Button {
         id: startButton
         height: 100
-        anchors{
+        anchors {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
         }
         text: "Start"
         onClicked: {
-            internal.quranWindowSwitch()
+            internal.quranWindowSwitch();
         }
     }
 }
