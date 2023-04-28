@@ -2,7 +2,7 @@
 name = "bless"
 version = "0.11.0"
 description = "Qur'an for Desktop"
-authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه"]
+authors = ["Iqbal Syifa Mahmuda <bal.mahmuda@gmail.com>", "اللّٰه", "محمد بن عبدالله"]
 readme = "README.md"
 packages = [
     { include = "bless_qt" },
