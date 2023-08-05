@@ -5,4 +5,8 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+    groups: # will be modified, if separation of these is very important.
+      all:
+        patterns:
+          - "*"
