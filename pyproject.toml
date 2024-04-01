@@ -12,12 +12,12 @@ packages = [
 [tool.poetry.dependencies]
 python = "~3.11"
 bismillah-on-py = "1.0.1"
-pyside6 = "^6.5.0"
+pyside6 = "^6.6.3"
 bless-server = { git = "https://github.com/bal-sm/bless_server.git", tag = "0.9.0" }
 
 
 [tool.poetry.group.dev.dependencies]
-python-lsp-server = {extras = ["all"], version = "^1.7.2"}
+python-lsp-server = {extras = ["all"], version = "^1.11.0"}
 
 [tool.poetry.scripts]
 bless-start = "main:main"
